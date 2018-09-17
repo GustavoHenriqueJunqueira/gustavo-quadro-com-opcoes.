@@ -102,7 +102,7 @@ function _InverterData(data){
 function MudarCorColunaData(){
   var classe = 'corColunaData';
   var tabela = document.querySelector('td.nascimento');
-  var nascimentos = document.querySelectorAll('td.nascimento');
+  var text = document.querySelectorAll('td.nascimento')
 
   if (this.checked) {
     tabela.classList.add(classe);
