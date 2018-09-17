@@ -15,6 +15,9 @@ function iniciar() {
 
   var chkInverterDiaMes = document.querySelector('#chkInverterDiaMes');
   chkInverterDiaMes.addEventListener('change', InvertedData);
+
+  var chkMudarCorColunaData = document.querySelector('#chkMudarCorColunaData');
+  chkMudarCorColunaData.addEventListener('change',MudarCorColunaData);
 }
 
 function habilitarMudarTamanho() {
@@ -68,7 +71,7 @@ function trocarBackground() {
  
 function habilitarTextoItalico() {
   var classe = 'textoItalico';
-  var tabela = document.querySelector('#dadosBanda');
+  var tabela = document.querySelector('#cabecalhoBanda');
   var texto = document.querySelector('#chkTexto');
 
   if (this.checked) {
@@ -77,7 +80,6 @@ function habilitarTextoItalico() {
     tabela.classList.remove(classe);
   }
 }  
-//Inverder dia com mes 
 
 function InvertedData() {
   var nascimentos = document.querySelectorAll('td.nascimento');
@@ -96,3 +98,15 @@ function _InverterData(data){
 
   return mes + '/' + dia + '/' + ano;
 }
+
+function MudarCorColunaData(){
+  var classe = 'corColunaData';
+  var tabela = document.querySelector('td.nascimento');
+  var nascimentos = document.querySelectorAll('td.nascimento');
+
+  if (this.checked) {
+    tabela.classList.add(classe);
+  } else {
+    tabela.classList.remove(classe);
+  }
+}  
