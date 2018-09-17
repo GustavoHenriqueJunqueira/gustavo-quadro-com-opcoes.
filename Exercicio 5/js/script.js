@@ -80,15 +80,19 @@ function habilitarTextoItalico() {
 //Inverder dia com mes 
 
 function InvertedData() {
-  var tabela = document.querySelector('#dadosBanda');
-  var coluna = document.querySelector('#nascimento');
+  var nascimentos = document.querySelectorAll('td.nascimento');
   
-  if (tabela.classList.contains(classeBG)) {
-       tabela.classList.remove(classeBG);
-       this.value = 'Background amarelo';
-  } 
-  else {
-    tabela.classList.add(classeBG);
-      this.value = 'Background padrão';
+  for (var i = 0; i < nascimentos.length; i++){
+    var elementoAtual = nascimentos[i];
+    var conteudoAtual = elementoAtual.textContent;
+    elementoAtual.textContent = _InverterData(conteudoAtual);
+    }
   }
+
+function _InverterData(data){
+  var dia = data.substr(0, 2);
+  var mes = data.substr(3, 2);
+  var ano = data.substr(6, 4);
+
+  return mes + '/' + dia + '/' + ano;
 }
